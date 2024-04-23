@@ -171,7 +171,7 @@ public class Main {
 
                 try {
 
-                    //String query = "SELECT * FROM " + dbName + " WHERE EXISTS (SELECT Name FROM " + dbName + " WHERE " + dbName + ".Name = " + person + ")";
+                    
                     String query = "SELECT * FROM " + dbName + " WHERE Name = '" + person + "'";
 
                     st = conn.createStatement();
