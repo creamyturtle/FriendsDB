@@ -121,7 +121,41 @@ public class Main {
 
             if (command == 4) {
 
-                //dunno yet
+                //UPDATE RECORD
+                
+                System.out.println("Which person would you like to edit?");
+                String persona = input.nextLine();
+                
+                System.out.println("");
+                System.out.println("Which field would you like to change?");
+                System.out.println("Name / Age / Location / PhoneNumber / MaleFemale / Comments");
+                System.out.println("");
+                System.out.println("(write string exactly as shown)");
+                System.out.println("");
+                
+                String columnID = input.nextLine();
+                
+                
+                System.out.println("Enter new data for field:");
+                String newData = input.nextLine();
+                
+                
+                String query = "UPDATE " + dbName + " SET " + columnID + " = '" + newData + "' WHERE Name = '" + persona + "'";
+
+                
+                try {
+
+                    st = conn.createStatement();
+                    rs = st.executeQuery(query);
+
+                    System.out.println("Database updated successfully!");
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                
+                
+                
 
             }
 
